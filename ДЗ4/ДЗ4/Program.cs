@@ -63,6 +63,24 @@ namespace ДЗ4
         }
 
         /// <summary>
+        /// Gets array of random numbers.
+        /// </summary>
+        /// <param name="n">Array of input numbers.</param>
+        /// <returns>New random array.</returns>
+        public static int[] GetRandomArray(int n)
+        {
+            int[] array = new int[n];
+            Random random = new Random();
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = random.Next(1, 26);
+            }
+
+            return array;
+        }
+
+        /// <summary>
         /// Main function.
         /// </summary>
         /// <param name="args">.</param>
@@ -76,16 +94,9 @@ namespace ДЗ4
             }
             else
             {
-                int[] array = new int[n];
-                Random random = new Random();
-                for (int i = 0; i < n; i++)
-                {
-                    array[i] = random.Next(1, 26);
-                }
-
-                PrintArrayOfNums(array);
+                PrintArrayOfNums(GetRandomArray(n));
                 Console.WriteLine();
-                PrintArrayOfLetters(NumsToLetters(array));
+                PrintArrayOfLetters(NumsToLetters(GetRandomArray(n)));
                 Console.WriteLine();
             }
         }
