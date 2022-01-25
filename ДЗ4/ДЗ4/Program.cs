@@ -1,10 +1,22 @@
-﻿using System;
+﻿// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ДЗ4
 {
+    using System;
+
+    /// <summary>
+    /// Main class.
+    /// </summary>
     internal class Program
     {
-        public static char [] NumsToLetters(int[] arrayOfNums)
+        /// <summary>
+        /// Converts all numbers in array to letters.
+        /// </summary>
+        /// <param name="arrayOfNums">Array of input numbers.</param>
+        /// <returns>New array of chars based on array of numbers.</returns>
+        public static char[] NumsToLetters(int[] arrayOfNums)
         {
             string letters = "abcdefghijklmnopqrstuvwxyz";
             string specialLetters = "aeidhj";
@@ -16,13 +28,16 @@ namespace ДЗ4
                 if (specialLetters.Contains(arrayOfLetters[i]))
                 {
                     arrayOfLetters[i] = char.ToUpper(arrayOfLetters[i]);
-
                 }
             }
 
             return arrayOfLetters;
         }
 
+        /// <summary>
+        /// Prints array of letters.
+        /// </summary>
+        /// <param name="array">Array of chars.</param>
         public static void PrintArrayOfLetters(char[] array)
         {
             Console.Write("Массив букв: ");
@@ -33,6 +48,10 @@ namespace ДЗ4
             }
         }
 
+        /// <summary>
+        /// Prints array of numbers.
+        /// </summary>
+        /// <param name="array">Array of input numbers.</param>
         public static void PrintArrayOfNums(int[] array)
         {
             Console.Write("Массив рандомных чисел: ");
@@ -43,7 +62,11 @@ namespace ДЗ4
             }
         }
 
-        public static void Main (string[] args)
+        /// <summary>
+        /// Main function.
+        /// </summary>
+        /// <param name="args">.</param>
+        public static void Main(string[] args)
         {
             Console.WriteLine("Введите любое число от 1 до 26 включительно: ");
             bool result = int.TryParse(Console.ReadLine(), out var n);
